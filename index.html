@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+  <head>
+    <title>英了个语 · 一款集单词记忆、口语练习、听力提升、社区功能于一体的英语 App</title>
+    <meta
+      name="description"
+      content="英了个语是一款集单词记忆、口语练习、听力提高、AI陪练等多种功能的综合英语学习软件。同时拥有游戏互动和社区交流的功能,该款软件不仅能让你在学习中感受到乐趣，还可以让你在游戏中获取知识。英了个语是一款寓教于乐、试听结合倡导快乐学习的英语学习软件。"
+    />
+    <meta name="keyword" content="英语,英了个语,单词记忆,英语学习,寓教于乐,游戏互动,社区交流,口语学习,听力提高,英语软件,游戏,AI陪练,Wordle,单词拼写,模拟考场,四六级,考研,专升本">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+SC:wght@100..900&family=ZCOOL+XiaoWei&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="styles/controls.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- 预加载背景图 -->
+    <link rel="preload" href="assets/temp_background.JPG" as="image" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <!-- 背景设置 -->
+    <div id="container" class="container"></div>
+    <input id="filePicker" type="file" accept=".jpg, .jpeg, .png, .mp4, .webm" style="visibility: hidden" />
+
+    <div class="indeterminate-progress-bar">
+      <div class="indeterminate-progress-bar__progress"></div>
+    </div>
+
+    <!-- 菜单栏 -->
+    <div class="nav">
+      <div>
+        <img src="assets/logo.png" alt="英了个语 logo" />
+        <h4>英了个语</h4>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a text="主页" class="active">主页</a>
+          </li>
+          <li>
+            <a text="单词海洋">单词海洋</a>
+          </li>
+          <li>
+            <a text="听力世界">听力世界</a>
+          </li>
+          <li>
+            <a text="口语王国">口语王国</a>
+          </li>
+          <li>
+            <a text="模拟考场">模拟考场</a>
+          </li>
+          <li>
+            <a text="游戏乐园">游戏乐园</a>
+          </li>
+          <li>
+            <a text="社区">社区</a>
+          </li>
+          <li>
+            <a
+              text="下载客户端"
+              href="#"
+              target="_blank"
+              >下载客户端</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 栏目一 -->
+    <div id="page-home">
+      <div class="heading">
+        <div style="margin-top: 60px;">
+          <img alt="lively wallpaper logo" src="assets/logo.png" width="125" class="logo" />
+          <h3 style="margin-bottom: 0px; margin-top: 50px">Better late than never!</h3>
+          <p>
+            集单词记忆、口语练习、听力练习、考场模拟于一体
+          </p>
+          <button class="acrylic-button" onClick="scrollToElement('page-download');"><span>立即体验</span></button>
+        </div>
+      </div>
+      <!-- ui -->
+      <div class="ui-app">
+        <!-- app功能展示 -->
+        <div id="ui-app-library">
+          <div class="ui-app-overlay"></div>
+          <!-- <div class="down-arrow" onClick="scrollToElement('page-home');"></div> -->
+          <div id="ui-app-titlebar">
+            <img alt="lively wallpaper logo" src="assets/logo.png" />
+            <a>英了个语</a>
+          </div>
+          <div class="ui-app-body">
+            <div class="ui-app-body-top"></div>
+            <div class="ui-app-body-main"></div>
+          </div>
+          <!-- <img src="assets/app.webp" class="ui-app-img" draggable="false" /> -->
+          <ul id="wallpapers" class="wallpapers">
+            <li id="rain" class="library">
+              <img
+                alt="rain wallpaper"
+                src="assets/rain_preview.webp"
+                style="outline: 2.5px solid #0055C1"
+                width="600"
+                height="400"
+                draggable="false"
+              />
+              <div>视频填空</div>
+            </li>
+
+            <li id="snow" class="library">
+              <img alt="snow wallpaper" src="assets/snow_preview.webp" width="600" height="400" draggable="false" />
+              <div>社区系统</div>
+            </li>
+
+            <li id="clouds" class="library">
+              <img alt="cloud wallpaper" src="assets/clouds_preview.webp" width="600" height="400" draggable="false" />
+              <div>听力学习</div>
+            </li>
+
+            <li id="synthwave" class="library">
+              <img
+                alt="synthwave wallpaper"
+                src="assets/synthwave_preview.webp"
+                width="600"
+                height="400"
+                draggable="false"
+              />
+              <div>游戏模式</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 标语 -->
+        <div id="ui-app-customise">
+          <div id="ui-app-customize-heading">
+            <h1 style="margin-bottom: 0">寓教于乐 视听结合</h1>
+            <h3 style="margin-top: 10px">Anything is possible, go on try it..</h3>
+          </div>
+          <!-- 不要删除 -->
+          <div class="ui-app-dialog"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 特色 -->
+    <div id="page-features">
+      <h2>英了个语能给你带来什么？</h2>
+      <p>听、说、读、写、互动我们一样不缺！</p>
+      <ul class="cards">
+        <li class="card" id="feature-card-1">
+          <img alt="github" src="assets/icons/github.svg" class="white-filter" />
+          <div>单词背诵</div>
+          <p>海量单词一网打尽，让你轻松变身词汇达人，记单词就像打游戏一样过瘾！ <br />四六级、考研、雅思、托福、专升本 </p>
+        </li>
+
+        <li class="card" id="feature-card-2">
+          <img alt="" src="assets/icons/gauge-high.svg" class="white-filter" />
+          <div>听力练习</div>
+          <p>原汁原味的英语听力材料，让你在听中进步，练耳又练心，听力水平飙升不是梦！</p>
+        </li>
+
+        <li class="card" id="feature-card-3">
+          <img alt="" src="assets/icons/rocket.svg" class="white-filter" />
+          <div>AI陪练</div>
+          <p>智能AI陪你练口语，随时随地开口说，不再孤单，口语流利指日可待！</p>
+        </li>
+
+        <li class="card" id="feature-card-4">
+          <img alt="" src="assets/icons/toolbox.svg" class="white-filter" />
+          <div>模拟考场</div>
+          <p>真实还原考试场景，让你提前体验考试氛围，轻松应对各种考试，拿到高分不是梦！</p>
+        </li>
+      </ul>
+      <a
+        href="#"
+        title="#"
+        target="_blank"
+        >点击查看所有功能</a
+      >
+    </div>
+
+    <!-- 截图 -->
+    <div id="page-gallery">
+      <h2>功能介绍</h2>
+      <p>Here are some cool functions..</p>
+      <div class="gallery-container">
+        <div class="gallery-wrap">
+          <div class="item item-1" data-delayedsrc="url(assets/promo/gallery1.webp)"><p>Fluid Simulation</p></div>
+          <div class="item item-2" data-delayedsrc="url(assets/promo/gallery2.webp)"><p>Music TV</p></div>
+          <div class="item item-3" data-delayedsrc="url(assets/promo/gallery3.webp)"><p>The Great Wave</p></div>
+          <div class="item item-4" data-delayedsrc="url(assets/promo/gallery4.webp)"><p>Simple System</p></div>
+          <div class="item item-5" data-delayedsrc="url(assets/promo/gallery5.webp)"><p>Synthwave</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 下载 -->
+    <div id="page-download">
+      <h2>Have a try!</h2>
+      <div class="download-options">
+        <div>
+          <a
+            class="download-button"
+            href="#"
+          >
+            <img alt="英了个语下载" src="assets/icons/download.svg" class="white-filter" />
+            <h1>立即下载体验！</h1>
+          </a>
+        </div>
+      </div>
+      <div>
+        <a
+          href="#"
+          title="#"
+          target="_blank"
+          >更新记录</a
+        >
+      </div>
+    </div>
+
+    <div id="footer">
+      <div>
+        <img alt="3ZLL" src="assets/3ZLL.JPG" class="avatar" />
+        <h4>3ZLL</h4>
+        <a href="mailto: contact@tree.pink">contact@tree.pink</a>
+        <br />
+        <a href="#" target="_blank">网址</a>
+      </div>
+      <div id="footer-attribution">
+        <a>鄂 ICP 备 2022017988 号 | 鄂公网安备 42030402000170 号 | <a href="https://github.com/rocksdanister/lively-webpage" target="_blank">Attribution</a></a>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/three.js/0.151.3/three.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+  <!-- load in this order -->
+  <script src="js/controls.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/index.js"></script>
+</html>
